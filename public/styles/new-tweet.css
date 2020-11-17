@@ -1,0 +1,37 @@
+/* 
+* new-tweet css
+*/
+
+
+.new-tweet form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+#tweet-text {
+  align-self: center;
+  justify-self: center;
+  border-bottom-style: solid;
+  border-bottom-width: thick;
+  border-top-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  width: 100%;
+  background-color: #f4f1ec;
+  height: 2em;
+}
+
+div footer {
+  display: flex;
+  justify-content: space-between;
+  font-family: Bungee, sans-serif;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+div footer button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  
+}
