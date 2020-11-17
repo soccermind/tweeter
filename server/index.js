@@ -23,7 +23,8 @@ const db = require("./lib/in-memory-db");
 const DataHelpers = require("./lib/data-helpers.js")(db);
 
 // Update the dates for the initial tweets (data-files/initial-tweets.json).
-require("./lib/date-adjust")();
+// *** me: commenting date-adjust.js for now due to a bug
+// require("./lib/date-adjust")();
 
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.

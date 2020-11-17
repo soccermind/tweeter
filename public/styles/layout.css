@@ -23,3 +23,16 @@ body {
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+ /* nav {
+  font-family: Bungee, sans-serif;
+ } */
+
+ main {
+   /* border-style: solid;
+   border-color: purple; */
+   background-color: #f4f1ec;
+   width: 90vw;
+   margin: auto;
+   font-family: "Source Sans Pro", sans-serif;
+ }
