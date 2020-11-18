@@ -32,7 +32,7 @@ $(document).ready(function() {
 
   const renderTweets = function (arrOfTweets) {
     for (const tweet of arrOfTweets) {
-      $('#tweets-container').append(createTweetElement(tweet));
+      $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
@@ -63,5 +63,23 @@ $(document).ready(function() {
   ]
 
   renderTweets(data);
+
+
+  // NEW TWEETS - Form submission using jQuery
+  $('form').on('submit', event => {
+    event.preventDefault()
+    // console.log(
+    //   $('form').val(),
+    //   $('form textarea').val(),
+    //   $('form').serialize()
+    // )
+    $
+    .ajax({
+      url: "/tweets/",
+      method: "POST",
+      data: $('form').serialize()
+    })
+    .then(res => console.log(res))
+  });
 
 });
