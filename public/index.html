@@ -32,19 +32,14 @@
       <span>tweeter</span>
       <div>
         <label><strong>Write&nbsp</strong>a new tweet</label>
-        <label>︾</label>
+        <label class="red"><strong>︾</strong></label>
       </div>
     </nav>
     <!-- Header containing name and avatar -->
     <header class="top">
-      <!-- <div class="avatar"> -->
-        <img src="/images/profile-hex.png"> 
-      <!-- </div> -->
+      <img src="/images/profile-hex.png"> 
       <br>
-      <!-- remove exesive/unnecessary divs -->
-      <!-- <div class="user"> -->
-        <h2>Alberto Olvera</h2>
-      <!-- </div> -->
+      <h2>Alberto Olvera</h2>
     </header>
 
     <!-- Page-specific (main) content here -->
@@ -54,40 +49,29 @@
         <form action="/tweets/" method="POST">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
-          <!-- <div> -->
-            <footer>
-              <button type="submit">Tweet</button>
-              <output name="counter" class="counter" for="tweet-text">140</output>
-            </footer>
-          <!-- </div> -->
+          <footer>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </footer>
         </form>
       </section>
-      <section id="past-tweets">
-        <article class="tweet">
-          <!-- <div> -->
-            <header>
-              <div>
-                <img src="/images/tweet-square.png">
-              <!-- </div> -->
-              <!-- <div> -->
-                <p class="display-name">Penny</p>
-              </div>
-              <!-- <div class="user-name"> -->
-                <p class="user-name">@ppincher</p>
-              <!-- </div> -->
-            </header>
-          <!-- </div> -->
-          <!-- <div> -->
-            <p class="past-tweet">Beauty is in the eye of the beerholder.</p>
-          <!-- </div> -->
+      <!-- <section id="past-tweets"> -->
+      <section id="tweets-container">
+        <!-- <article class="tweet">
+          <header>
+            <div>
+              <img src="/images/tweet-square.png">
+              <p class="display-name">Penny</p>
+            </div>
+            <p class="user-name">@ppincher</p>
+          </header>
+          <p class="past-tweet">Beauty is in the eye of the beerholder.</p>
           <hr>
-          <!-- <div> -->
-            <footer>
-              <p class="small"><small>10 days ago</small></p>
-              <p class="small"><small>⚑ &nbsp ⇌ &nbsp ♥</small></p>
-            </footer>
-          <!-- </div> -->
-        </article>
+          <footer>
+            <p class="small"><small>10 days ago</small></p>
+            <p class="small"><small>⚑ &nbsp ⇌ &nbsp ♥</small></p>
+          </footer>
+        </article> -->
       </section>
     </main>
   </body>

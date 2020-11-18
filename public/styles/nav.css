@@ -2,6 +2,8 @@
 * Navigation bar css 
 */
 nav {
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
@@ -10,6 +12,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 9;
 }
 
 nav span {
@@ -20,5 +23,9 @@ nav div label {
   font-family: 'Source Sans Pro', sans-serif;
   display: flex;
   justify-content: center;
+}
+
+.red {
+  color: red;
 }
 
