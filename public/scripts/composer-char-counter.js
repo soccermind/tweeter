@@ -1,11 +1,11 @@
 $(document).ready(function() {
   console.log("form inside the $(document).ready callback!!!")
   $('#tweet-text').on('input', function(event) {
-    let count = 140 - this.value.length;
+    const count = 140 - this.value.length;
     console.log(count);
     // $('output.counter').text(count);
     // counter = $(this).parent().find('.counter').text(count);
-    counter = $(this).parent().find('.counter');
+    const counter = $(this).parent().find('.counter');
     counter.text(count);
     console.log(counter);
     if (count < 0) {

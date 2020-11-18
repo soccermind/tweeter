@@ -1,7 +1,7 @@
 /* 
 * Header css 
 */
-header {
+header.top {
   /* border-style: solid;
   border-color: purple; */
   height: 400px;
@@ -16,15 +16,15 @@ header {
   justify-content: center; 
 }
 
-header div {
+/* header div { */
   /* display: flex; */
   /* border-style: solid;
   border-color: red; */
-}
+/* } */
 
-header div img {
-  margin: auto;
-}
+/* header div img {
+  margin: auto; */
+/* } */
 /* .avatar {
   display: flex;
   border-style: solid;
