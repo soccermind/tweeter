@@ -2,6 +2,15 @@
 * new-tweet css
 */
 
+.error {
+  background-color: #fce4e4;
+  border: 1px solid red;
+  color: red;
+  font-size: smaller;
+  float: left;
+  padding: 10px;
+  display: none;
+}
 
 .new-tweet form {
   margin: auto;
