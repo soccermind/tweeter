@@ -8,5 +8,5 @@ $(document).ready(function() {
     } else {
       counter.removeClass('negative');
     }
-  })
+  });
 });

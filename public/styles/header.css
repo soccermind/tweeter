@@ -1,11 +1,13 @@
 /* 
 * Header css 
 */
+
+/* Mobile Styles */
+
 header.top {
   height: 400px;
   width: 100vw;
   background-color: #F0A000;
-  /* background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png"); */
   color: #FFFFFF;
   display: flex;
   flex-direction: column;

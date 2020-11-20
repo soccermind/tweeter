@@ -9,9 +9,9 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
 
-  const createTweetElement = function (tweetObj) {
+  const createTweetElement = function(tweetObj) {
     // calculate tweet age in days
     const today = new Date();
     const oneDay = 24 * 60 * 60 * 1000;
@@ -30,26 +30,24 @@ $(document).ready(function() {
       <hr>
       <footer>
         <p class="small"><small>${daysAgo} days ago</small></p>
-        <p class="small"><small>⚑ &nbsp ⇌ &nbsp ♥</small></p>
+        <p class="small icons"><small>⚑ &nbsp ⇌ &nbsp ♥</small></p>
       </footer>
     </article>`);
     return $tweet;
   };
 
-  const renderTweets = function (arrOfTweets) {
+  const renderTweets = function(arrOfTweets) {
     $('#tweets-container').empty();
     for (const tweet of arrOfTweets) {
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
-  const loadTweets = function () {
-    $
-    .ajax({
+  const loadTweets = function() {
+    $.ajax({
       url: "/tweets",
       method: "GET"
-    })
-    .then(res => {
+    }).then(res => {
       renderTweets(res);
     });
   };
@@ -59,33 +57,26 @@ $(document).ready(function() {
 
   // NEW TWEETS - Form submission using jQuery
   $('form').on('submit', event => {
-    event.preventDefault()
-    const len = $('form textarea').val().length
+    event.preventDefault();
+    const len = $('form textarea').val().length;
     $('#error-msg').text("");
     $('#error-msg').slideUp();
     if (!len) {
-      // alert("Please type your tweet before submitting!")
       $('#error-msg').text("⚠️ Please type your tweet before submitting!");
       $('#error-msg').slideDown();
     } else if (len > 140) {
       $('#error-msg').text("⚠️ Character count limit of 140 has been exceeded and cannot be submitted.");
       $('#error-msg').slideDown();
     } else {
-      $
-      .ajax({
+      $.ajax({
         url: "/tweets",
         method: "POST",
         data: $('form').serialize()
-      })
-      .then(res => {
+      }).then(res => {
         $('form textarea').val(null);
         $('output.counter').val(140);
         loadTweets();
-      })
+      });
     }
-
-
-
   });
-
 });

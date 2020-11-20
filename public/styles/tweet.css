@@ -2,6 +2,8 @@
 * tweet css
 */
 
+/* All Styles */
+
 article.tweet {
   border-style: solid;
   border-color: black;
@@ -45,16 +47,15 @@ article.tweet:hover div {
 article.tweet img {
   margin-right: 0.5em;
 }
+
 .user-name {
   margin-left: auto;
   margin-right: 0;
-  display: none;
+  color:   lightblue;
 }
 
 article.tweet:hover .user-name {
   display: block;
-  color:   lightblue;
-  ;
 }
 
 article.tweet footer {
@@ -76,6 +77,14 @@ article.tweet footer p {
   font-size: 0.75em;
 }
 
+.icons {
+  color: #0000A0;
+  display: none;
+}
+
+article.tweet:hover .icons {
+  display: block;
+}
 
 article.tweet hr {
   border-top: 0.15em solid black;
