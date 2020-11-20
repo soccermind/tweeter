@@ -47,3 +47,10 @@ form footer button {
   background-color: #4056A1;
   color: #FFFFFF;
 }
+
+/* Desktop styles */
+@media only screen and (min-width: 1024px) {
+  .new-tweet {
+    margin: 0 1rem;
+  }
+}

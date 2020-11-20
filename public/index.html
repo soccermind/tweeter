@@ -3,7 +3,7 @@
   <head>
     <!-- Meta Information -->
     <title>Tweeter - Home Page</title>
-
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
@@ -32,7 +32,7 @@
       <span>tweeter</span>
       <div>
         <label><strong>Write&nbsp</strong>a new tweet</label>
-        <label class="red"><strong>︾</strong></label>
+        <button class="compose-button" type="button"><strong>︾</strong></button>
       </div>
     </nav>
     <!-- Header containing name and avatar -->
@@ -58,23 +58,8 @@
           </footer>
         </form>
       </section>
-      <!-- <section id="past-tweets"> -->
       <section id="tweets-container">
-        <!-- <article class="tweet">
-          <header>
-            <div>
-              <img src="/images/tweet-square.png">
-              <p class="display-name">Penny</p>
-            </div>
-            <p class="user-name">@ppincher</p>
-          </header>
-          <p class="past-tweet">Beauty is in the eye of the beerholder.</p>
-          <hr>
-          <footer>
-            <p class="small"><small>10 days ago</small></p>
-            <p class="small"><small>⚑ &nbsp ⇌ &nbsp ♥</small></p>
-          </footer>
-        </article> -->
+        <!-- posted tweets to be prepended here -->
       </section>
     </main>
   </body>

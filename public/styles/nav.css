@@ -1,12 +1,13 @@
 /* 
 * Navigation bar css 
 */
+/* Mobile Styles */
 nav {
   position: fixed;
   top: 0;
   height: 120px;
   width: 100vw;
-  background-color: #4056A1;
+  background-color: #F0A000;
   color: #FFFFFF;
   padding: 1.5em;
   display: flex;
@@ -25,7 +26,19 @@ nav div label {
   justify-content: center;
 }
 
-.red {
+.compose-button {
   color: red;
+  background-color: inherit;
+  border: none;
+  display: flex;
+  justify-content: center;
+  padding: 0.25em;
+  margin: auto;
 }
 
+/* Tablet (and desktop) styles */
+@media only screen and (min-width: 768px) {
+  nav { 
+    background-color: #4056A1;
+  }
+}

@@ -2,14 +2,11 @@
 * Header css 
 */
 header.top {
-  /* border-style: solid;
-  border-color: purple; */
   height: 400px;
   width: 100vw;
-  background-color: #ffa600;
-  background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png");
+  background-color: #F0A000;
+  /* background-image: url("https://www.transparenttextures.com/patterns/fresh-snow.png"); */
   color: #FFFFFF;
-  /* padding: 1.5em; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,23 +14,10 @@ header.top {
   margin-top: 120px;
 }
 
-/* header div { */
-  /* display: flex; */
-  /* border-style: solid;
-  border-color: red; */
-/* } */
+ /* Desktop styles */
+ @media only screen and (min-width: 1024px) {
+  header.top {
+    width: 40%;
+  }
 
-/* header div img {
-  margin: auto; */
-/* } */
-/* .avatar {
-  display: flex;
-  border-style: solid;
-  border-color: red;
 }
-
-.user {
-  display: flex;
-  border-style: solid;
-  border-color: red;
-} */
