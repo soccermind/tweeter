@@ -1,8 +1,8 @@
 /*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+* Client-side JS logic goes here
+* jQuery is already loaded
+* Reminder: Use (and do all your DOM work in) jQuery's document ready function
+*/
 $(document).ready(() => {
   // Prevent XSS with escaping
   const escape =  (str) => {
@@ -11,12 +11,36 @@ $(document).ready(() => {
     return div.innerHTML;
   };
 
-  const createTweetElement = (tweetObj) => {
-    // calculate tweet age in days
+  // Calculate tweet age and return appropriate string for seconds, minutes, hours, days.
+  const calculateTweetAge = (createdAt) => {
     const today = new Date();
-    const oneDay = 24 * 60 * 60 * 1000;
-    const daysAgo = Math.round((today - tweetObj.created_at) / oneDay);
+    const millisecondsAgo = today - createdAt;
+    let plural = 's';
 
+    const secondsAgo = Math.round(millisecondsAgo / 1000);
+    if (secondsAgo < 60) {
+      plural = (secondsAgo === 1) ? '' : plural;
+      return `${secondsAgo} second${plural} ago`;
+    }
+
+    const minutesAgo = Math.round(secondsAgo / 60);
+    if (minutesAgo < 60) {
+      plural = (minutesAgo === 1) ? '' : plural;
+      return `${minutesAgo} minute${plural} ago`;
+    }
+
+    const hoursAgo = minutesAgo / 60;
+    if (hoursAgo < 60) {
+      plural = (hoursAgo === 1) ? '' : plural;
+      return `${hoursAgo} hour${plural} ago`;
+    }   
+    
+    const daysAgo = hoursAgo / 24;
+    plural = (daysAgo === 1) ? '' : plural;
+    return `${daysAgo} day${plural} ago`;
+  };
+
+  const createTweetElement = (tweetObj) => {
     const $tweet = $(
       `<article class="tweet">
       <header>
@@ -29,7 +53,7 @@ $(document).ready(() => {
       <p class="past-tweet">${escape(tweetObj.content.text)}</p>
       <hr>
       <footer>
-        <p class="small"><small>${daysAgo} days ago</small></p>
+        <p class="small"><small>${calculateTweetAge(tweetObj.created_at)}</small></p>
         <p class="small icons"><small>⚑ &nbsp ⇌ &nbsp ♥</small></p>
       </footer>
     </article>`);
@@ -88,6 +112,5 @@ $(document).ready(() => {
       loadTweets();
     });
   }; 
-    
   });
 });
