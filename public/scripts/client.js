@@ -29,13 +29,13 @@ $(document).ready(() => {
       return `${minutesAgo} minute${plural} ago`;
     }
 
-    const hoursAgo = minutesAgo / 60;
+    const hoursAgo = Math.round(minutesAgo / 60);
     if (hoursAgo < 60) {
       plural = (hoursAgo === 1) ? '' : plural;
       return `${hoursAgo} hour${plural} ago`;
     }   
     
-    const daysAgo = hoursAgo / 24;
+    const daysAgo = Math.round(hoursAgo / 24);
     plural = (daysAgo === 1) ? '' : plural;
     return `${daysAgo} day${plural} ago`;
   };
