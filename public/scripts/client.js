@@ -3,7 +3,7 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
-$(document).ready(function() {
+$(document).ready(() => {
   // Prevent XSS with escaping
   const escape =  function(str) {
     let div = document.createElement('div');
@@ -11,7 +11,7 @@ $(document).ready(function() {
     return div.innerHTML;
   };
 
-  const createTweetElement = function(tweetObj) {
+  const createTweetElement = (tweetObj) => {
     // calculate tweet age in days
     const today = new Date();
     const oneDay = 24 * 60 * 60 * 1000;
@@ -36,14 +36,14 @@ $(document).ready(function() {
     return $tweet;
   };
 
-  const renderTweets = function(arrOfTweets) {
+  const renderTweets = (arrOfTweets) => {
     $('#tweets-container').empty();
     for (const tweet of arrOfTweets) {
       $('#tweets-container').prepend(createTweetElement(tweet));
     }
   };
 
-  const loadTweets = function() {
+  const loadTweets = () => {
     $.ajax({
       url: "/tweets",
       method: "GET"
@@ -52,7 +52,7 @@ $(document).ready(function() {
     });
   };
 
-  // OLD TWEETS - Fetching tweets with Ajax
+  // Fetching tweets with Ajax
   loadTweets();
 
   // NEW TWEETS - Form submission using jQuery
@@ -61,6 +61,7 @@ $(document).ready(function() {
     const len = $('form textarea').val().length;
     $('#error-msg').text("");
     $('#error-msg').slideUp();
+    
     if (!len) {
       $('#error-msg').text("⚠️ Please type your tweet before submitting!");
       $('#error-msg').slideDown();

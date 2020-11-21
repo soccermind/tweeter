@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(() => {
   $('#tweet-text').on('input', function(event) {
     const count = 140 - this.value.length;
     const counter = $(this).parent().find('.counter');
