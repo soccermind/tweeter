@@ -20,11 +20,6 @@ article.tweet p.past-tweet {
   margin-bottom: 0;
   margin-left: 0.75em;
   margin-right: 0.75em;
-  filter: blur(1px);
-}
-
-article.tweet:hover p.past-tweet {
-  filter: blur(0);
 }
 
 article.tweet header {
@@ -37,11 +32,6 @@ article.tweet header {
 article.tweet div {
   display: flex;
   align-items: center;
-  filter: blur(1px);
-}
-
-article.tweet:hover div {
-  filter: blur(0);
 }
 
 article.tweet img {
@@ -64,11 +54,6 @@ article.tweet footer {
   font-family: 'Source Sans Pro', sans-serif;
   margin-left: 0.75em;
   margin-right: 0.75em;
-  filter: blur(1px);
-}
-
-article.tweet:hover footer {
-  filter: blur(0);
 }
 
 article.tweet footer p {
@@ -90,5 +75,4 @@ article.tweet hr {
   border-top: 0.15em solid black;
   margin-top: 1.5em;
   margin-bottom: 0;
-
 }

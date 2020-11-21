@@ -5,7 +5,7 @@
  */
 $(document).ready(() => {
   // Prevent XSS with escaping
-  const escape =  function(str) {
+  const escape =  (str) => {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -52,6 +52,21 @@ $(document).ready(() => {
     });
   };
 
+  // Validates that the tweet is not empty and under 140 characters.  
+  const validateTweet = (len) => {
+    if (!len) {
+      $('#error-msg').text("⚠️ Please type your tweet before submitting!");
+      $('#error-msg').slideDown();
+      return false;
+    }
+    if (len > 140) {
+      $('#error-msg').text("⚠️ Character count limit of 140 has been exceeded and cannot be submitted.");
+      $('#error-msg').slideDown();
+      return false;
+    }
+    return true;
+  };
+
   // Fetching tweets with Ajax
   loadTweets();
 
@@ -61,23 +76,18 @@ $(document).ready(() => {
     const len = $('form textarea').val().length;
     $('#error-msg').text("");
     $('#error-msg').slideUp();
+
+  if (validateTweet(len)) {
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: $('form').serialize()
+    }).then(res => {
+      $('form textarea').val(null);
+      $('output.counter').val(140);
+      loadTweets();
+    });
+  }; 
     
-    if (!len) {
-      $('#error-msg').text("⚠️ Please type your tweet before submitting!");
-      $('#error-msg').slideDown();
-    } else if (len > 140) {
-      $('#error-msg').text("⚠️ Character count limit of 140 has been exceeded and cannot be submitted.");
-      $('#error-msg').slideDown();
-    } else {
-      $.ajax({
-        url: "/tweets",
-        method: "POST",
-        data: $('form').serialize()
-      }).then(res => {
-        $('form textarea').val(null);
-        $('output.counter').val(140);
-        loadTweets();
-      });
-    }
   });
 });
